@@ -1,4 +1,4 @@
-# SuperSipmlePHPFileStorageAndUploader
+# SuperSimplePHPFileStorageAndUploader
 Very simple PHP file uploader and file storage system
 
 You can run this program and login with username: admin and password: admin, then begin uploading files.
