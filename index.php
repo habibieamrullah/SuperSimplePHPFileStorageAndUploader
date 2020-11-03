@@ -58,9 +58,18 @@ $password = "admin";
             }
             
             input{
-                padding: 20px;
-                margin-bottom: 10px;
-                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 5px;
+                margin-top: 5px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+            }
+            
+            input[type=submit]{
+                cursor: pointer;
+                background-color: lime;
+                font-weight: bold;
             }
             
             label{
@@ -103,6 +112,21 @@ $password = "admin";
                 left: 0;
                 bottom: 0;
             }
+            
+            .uploadform{
+                padding: 20px;
+                border: 2px solid white;
+                border-radius: 10px;
+                background-color: black;
+                display: inline-block;
+                transition: border .5s;
+                margin: 20px;
+                margin-top: 75px;
+            }
+            
+            .uploadform:hover{
+                border: 2px solid lime;
+            }
         </style>
         
     </head>
@@ -133,7 +157,7 @@ $password = "admin";
             if(isset($_SESSION["username"]) && isset($_SESSION["password"])){
                 
                 ?>
-                <h1>PHP File Storage</h1>
+                <h1><a href="index.php"><i class="fa fa-archive"></i> PHP File Storage</a></h1>
                 <?php
                 
                 if(isset($_POST["submitfile"])){
@@ -157,6 +181,8 @@ $password = "admin";
 					return filemtime($x) < filemtime($y);
 				});
 				
+				echo "<div>";
+				
 				foreach($files as $item){
 					echo "<div class='filethumb'>";
 					//echo "<div>" . $item . "</div>";
@@ -166,19 +192,24 @@ $password = "admin";
 					echo "</div>";
 				}
 				
+				
+				
 				if(count($files) == 0){
     				?>
-                    <p>You have no file here.</p>
+                    <p>You have no file here. Try to begin uploading using the upload form at the bottom of this page.</p>
                     <?php    
 				}
                 
+                echo "</div>";
+                
                 ?>
-                <form method="post" enctype="multipart/form-data" style="margin-top: 75px;">
-					<label><i class="fa fa-file"></i> Upload new file</label>
-					<input class="fileinput" name="newfile" type="file">
-					<input name = "submitfile" type="submit" value="Upload">
-				</form>
-				
+                <div class="uploadform">
+                    <form method="post" enctype="multipart/form-data">
+    					<label><i class="fa fa-file"></i> Upload new file</label>
+    					<input class="fileinput" name="newfile" type="file">
+    					<input name = "submitfile" type="submit" value="Upload">
+    				</form>
+				</div>
 				
 				<script>
 				    setTimeout(function(){
