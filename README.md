@@ -8,3 +8,5 @@ You can run this program and login with username: admin and password: admin, the
 Your uploaded files will be stored on uploads folder.
 
 After uploading your files, you can click any of listed file to download them, or click delete button to remove them.
+
+You can watch the demo video here: https://youtu.be/FMC2YiauXRs
