@@ -1,7 +1,10 @@
 <?php
 session_start();
+$baseurl = "http://localhost/ThirteeNov/SuperSimplePHPFileStorageAndUploader/";
 $username = "admin";
 $password = "admin";
+if(!file_exists("uploads"))
+	mkdir("uploads");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +12,6 @@ $password = "admin";
     <head>
         
         <title>PHP File Storage</title>
-        <link rel="shortcut icon" href="<?php echo $baseurl ?>favicon.ico" type="image/x-icon">
         <meta charset="utf-8">
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
@@ -171,7 +173,7 @@ $password = "admin";
             ?>
             <script>
                 setTimeout(function(){
-                    window.history.back();
+                    location.href = "<?php echo $baseurl ?>";
                 }, 2000);
             </script>
             <?php
@@ -182,9 +184,9 @@ $password = "admin";
                 ?>
                 
                 <div id="topribbon">
-                    <a href="admin.php"><div class="tritem"><i class="fa fa-home"></i> Home</div></a>
-                    <a href="admin.php?filestorage"><div class="tritem"><i class="fa fa-archive"></i> File Storage</div></a>
-                    <a href="admin.php?logout"><div class="tritem"><i class="fa fa-sign-out"></i> Sign Out</div></a>
+                    <a href="<?php echo $baseurl ?>"><div class="tritem"><i class="fa fa-home"></i> Home</div></a>
+                    <a href="<?php echo $baseurl ?>?filestorage"><div class="tritem"><i class="fa fa-archive"></i> File Storage</div></a>
+                    <a href="<?php echo $baseurl ?>?logout"><div class="tritem"><i class="fa fa-sign-out"></i> Sign Out</div></a>
                 </div>
                 
                 <div class="contentwrapper">
@@ -252,7 +254,7 @@ $password = "admin";
                         <p>You are signed out. Good bye!</p>
                         <script>
                             setTimeout(function(){
-        				        location.href = "<?php echo $baseurl ?>admin.php";
+        				        location.href = "<?php echo $baseurl ?>";
         				    }, 2500);
                         </script>
                         <?php
