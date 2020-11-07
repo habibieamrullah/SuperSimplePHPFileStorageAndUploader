@@ -224,7 +224,7 @@ if(!file_exists("uploads"))
         					//echo "<div>" . $item . "</div>";
         					echo "<a href='" .$item. "' target='_blank'><div><i class='fa fa-file' style='font-size: 40px;'></i></div>";
         					echo "<div>" . str_replace("uploads/", "", $item) . "</div></a>";
-        					echo "<a href='?delete=" .str_replace("uploads/", "", $item). "'><div style='color: red; margin-top: 20px; font-size: 10px;'><i class='fa fa-trash'></i> Delete</div></a>";
+        					echo "<a href='?filestorage&delete=" .str_replace("uploads/", "", $item). "'><div style='color: red; margin-top: 20px; font-size: 10px;'><i class='fa fa-trash'></i> Delete</div></a>";
         					echo "</div>";
         				}
         				
